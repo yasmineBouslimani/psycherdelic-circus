@@ -4,19 +4,20 @@
         <div class="container-fluid">
             <div class="nav-top row justify-content-between align-items-center no-gutters">
                 <ul class="nav-social position-relative z-2">
-                    <li><a class="text-gray" href="https://www.facebook.com/FlipFabriQue" target="_blank"><i
+                    <li><a class="text-gray" href="#" target="_blank"><i
                                     class="fab fa-facebook-f"></i></a></li>
-                    <li><a class="text-gray" href="https://instagram.com/flipfabrique" target="_blank"><i
+                    <li><a class="text-gray" href="#" target="_blank"><i
                                     class="fab fa-instagram"></i></a></li>
-                    <li><a class="text-gray" href="https://twitter.com/flipfabrique" target="_blank"><i
+                    <li><a class="text-gray" href="#" target="_blank"><i
                                     class="fab fa-twitter"></i></a></li>
-                    <li><a class="text-gray" href="https://www.youtube.com/channel/UCSac-yOmUNqtk9nxpuP-swg"
+                    <li><a class="text-gray" href="#"
                            target="_blank"><i class="fab fa-youtube"></i></a></li>
                 </ul>
                 <div class="row no-gutters justify-content-end position-relative z-2">
                     <div class="nav-item">
                         <a class="link text-gray font-weight-bold border-h text-lowercase"
-                           href="http://flipfabrique.com/en/contact/">Contact</a>
+                           href="
+                          #">Contact</a>
                     </div>
                 </div>
             </div>
@@ -34,10 +35,10 @@
                             <nav class="nav-main row justify-content-between align-items-start no-gutters">
                                 <div class="nav-item"><a
                                             class="link text-white xxlg font-weight-bold border-h text-lowercase"
-                                            href="http://flipfabrique.com/en/spectacles/">Shows</a></div>
+                                            href="{{ path('program_index') }}">Shows</a></div>
                                 <div class="nav-item"><a
                                             class="link text-white xxlg font-weight-bold border-h text-lowercase"
-                                            href="http://flipfabrique.com/en/calendrier/">Calendar</a></div>
+                                            href="{{path('calendar_show') }}">Calendar</a></div>
                                 <div class="nav-item dropdown">
                                     <a class="link text-white xxlg font-weight-bold border-h text-lowercase" href="#"
                                        role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -48,7 +49,7 @@
 
                                     <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuLink">
                                         <a class="dropdown-item text xsm font-weight-bold ls-lg text-lowercase"
-                                           href="http://flipfabrique.com/en/about/">About</a>
+                                           href="{{path('history_index')}}">About</a>
                                         <a class="dropdown-item text xsm font-weight-bold ls-lg text-lowercase"
                                            href="http://flipfabrique.com/en/adn-flip/our-dna/">FLIP Team</a>
                                         <a class="dropdown-item text xsm font-weight-bold ls-lg text-lowercase"
@@ -60,7 +61,7 @@
                             </nav>
                         </div>
 
-                        <a class="logo-hidden" href="http://flipfabrique.com/en/">
+                        <a class="logo-hidden" href="{{ path('user_index') }}">
                             <img class="resize-logo"
                                  src="https://festipi.nl/wp-content/uploads/2017/11/psy_cir_logo.png"
                                  alt="wild circus's logo"></a>

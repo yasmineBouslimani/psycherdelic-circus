@@ -58,6 +58,11 @@ class Program
      */
     private $programPrices;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $country;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -199,6 +204,18 @@ class Program
                 $programPrice->setPrograms(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?string $country): self
+    {
+        $this->country = $country;
 
         return $this;
     }

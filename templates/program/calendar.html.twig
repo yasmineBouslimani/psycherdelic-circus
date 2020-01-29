@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
+{% include '_nav.html.twig' %}
+
+    <div class=" header">
+        <div class="header-top">
+
+            <h1 class="header-title text-center">Calendar</h1>
+            <a class="btn btn-secondary rounded-lg font-weight-bold justify-content-center" href="#">Buy your tickets <i class="fas fa-ticket-alt ml-2" data-fa-transform="rotate-135"></i></a>
+        </div>
+    </div>
+
+
+    <div class="background-calendar position-relative">
+        <img class="voute-violette" src="http://flipfabrique.com/wp-content/themes/flip/lib/images/mask.svg" alt="">
+
+
+    <div class="mw-1040 ml-auto mr-auto pl-3 pr-3 mt-5"> </div>
+{% for program in programs %}
+    <div class="card-date rounded-md row no-gutters">
+        <div class="col-12 col-md-3 ml-auto mr-auto ml-md-0 mr-md-0">
+            <span class="text xxlg text-white font-weight-bold text-lowercase">February 1, 2020</span>
+        </div>
+        <div class="col pb-3 pb-md-0 pr-0 pr-md-4">
+            <a class="text xxlg text-white font-weight-bold" href="http://flipfabrique.com/en/show/blizzard/" tabindex="0">{{program.title}}</a>
+            <span class="text xxsm text-white lh-sm ls-xlg text-uppercase d-block mt-2">At The Cité Du Vin</span>
+            <span class="text xxsm text-white lh-sm ls-xlg text-uppercase d-block">{{program.city}} ({{ program.country }})</span>
+        </div>
+
+        <div>
+            <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block" href="http://carpenterarts.org/2019-2020/cirque-flip-fabrique.html" target="_blank" tabindex="0">Buy tickets <svg class="svg-inline--fa fa-ticket-alt fa-w-18 ml-2" data-fa-transform="rotate-135" aria-hidden="true" data-prefix="fas" data-icon="ticket-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="" style="transform-origin: 0.5625em 0.5em;"><g transform="translate(288 256)"><g transform="translate(0, 0)  scale(1, 1)  rotate(135 0 0)"><path fill="currentColor" d="M128 160h320v192H128V160zm400 96c0 26.51 21.49 48 48 48v96c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48v-96c26.51 0 48-21.49 48-48s-21.49-48-48-48v-96c0-26.51 21.49-48 48-48h480c26.51 0 48 21.49 48 48v96c-26.51 0-48 21.49-48 48zm-48-104c0-13.255-10.745-24-24-24H120c-13.255 0-24 10.745-24 24v208c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V152z" transform="translate(-288 -256)"></path></g></g></svg><!-- <i class="fas fa-ticket-alt ml-2" data-fa-transform="rotate-135"></i> --></a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
