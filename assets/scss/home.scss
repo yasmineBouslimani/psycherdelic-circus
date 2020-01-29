@@ -1,0 +1,34 @@
+
+.site-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.nav-social li {
+  display: inline;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.text-gray {
+  color: #818181;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+.logo-hidden {
+  font-size: 30px;
+  color : $whiteCircus;
+}
+
+.resize-logo {
+  max-width: 465px;
+  border: white 20px;
+}
+.image-voiture {
+  width: 100%;
+}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <title>{% block title %}Wild Circus - Bordeaux{% endblock %}</title>
+    {% include '_nav.html.twig' %}
+    <div>
+    <img class="image-voiture" src="{{ asset('build/images/entete.png') }}" alt="newdeal's logo">
+        <div class="main-box">
+            <div class="main-box-inner">
+                <div class="main-box-content">
+                    <h4>EN TOURNÉE</h4>
+                    <h2>NOS SPECTACLES</h2>
+                    <div class="btn-group">
+                        <a href="https://www.cirque-eloize.com/fr/spectacles-billets/" data-track="Spectacles" class="btn btn-cta white info">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">
+                <div class="scrolldown appear"><span class="icon-down"></span></div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
