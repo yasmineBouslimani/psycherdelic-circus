@@ -2,7 +2,6 @@
 {% block body %}
     <title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
     {% include '_nav.html.twig' %}
-
     <div class=" header">
         <div class="header-top">
 
@@ -20,7 +19,7 @@
         {% for program in programs %}
             <div class="card-date rounded-md row no-gutters">
                 <div class="col-12 col-md-3 ml-auto mr-auto ml-md-0 mr-md-0">
-                    <span class="text xxlg text-white font-weight-bold text-lowercase">February 1, 2020</span>
+                    <span class="text xxlg text-white font-weight-bold text-lowercase">{{ program.programedAt|date('l j, o') }}</span>
                 </div>
                 <div class="col pb-3 pb-md-0 pr-0 pr-md-4">
                     <a class="text xxlg text-white font-weight-bold" href="http://flipfabrique.com/en/show/blizzard/" tabindex="0">{{program.title}}</a>

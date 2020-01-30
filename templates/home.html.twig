@@ -2,10 +2,10 @@
 {% block body %}
 <title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
 {% include '_nav.html.twig' %}
-<div>
+<div style="background-color: #CACCE0">
     <img class="image-voiture" src="{{ asset('build/images/entete.png') }}" alt="newdeal's logo">
     <div class="main-box">
-        <div class="main-box-inner">
+        <div class="main-box-inner mb-5">
             <div class="main-box-content">
                 <h4>our shows</h4>
                 <h2>all around the world</h2>
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div >
 
         <div class="show-list-home container-fluid container-md">
             <div class="card-deck-show row no-gutters justify-content-between">
@@ -38,7 +38,7 @@
                         <div class="row  justify-content-center  no-gutters">
                             <div class="mt-2">
                                 <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
-                                   href="http://flipfabrique.com/en/show/blizzard/">More information</a>
+                                   href="{{path ('comment_index')}}">See comments</a>
                             </div>
                             <div class="mt-2">
                                 <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
@@ -69,8 +69,7 @@
                         <div class="row  justify-content-center  no-gutters">
                             <div class="mt-2">
                                 <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
-                                   href="http://flipfabrique.com/en/show/quebec-winter-carnival-parade-2020/">More
-                                    information</a>
+                                   href="{{ path('comment_index') }}">See comments</a>
                             </div>
                             <div class="mt-2">
                                 <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
@@ -102,11 +101,12 @@
                         <div class="row  justify-content-center  no-gutters">
                             <div class="mt-2">
                                 <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
-                                   href="http://flipfabrique.com/en/show/transit/">More information</a>
+                                   href="{{ path('comment_index') }}">See comments</a>
                             </div>
                             <div class="mt-2">
-                                <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
-                                   href="{{ path('ticket_index') }}">Buy your tickets
+                                <a href="{{ path('ticket_index') }}"
+                                   class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block">
+                                    Buy your tickets
                                   <i class="fas fa-ticket-alt icon-md ml-2" data-fa-transform="rotate-135"></i>
                                 </a>
                             </div>
@@ -116,8 +116,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
 

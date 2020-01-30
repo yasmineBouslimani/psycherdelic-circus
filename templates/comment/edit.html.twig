@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
+    {% include '_nav.html.twig' %}
+    <h1>Edit Comment</h1>
+
+    {{ include('comment/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('comment_index') }}">back to list</a>
+
+    {{ include('comment/_delete_form.html.twig') }}
+{% endblock %}

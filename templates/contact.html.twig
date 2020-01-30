@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
+{% include '_nav.html.twig' %}
+
+    {{ form(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+
+
+
+{% endblock %}
