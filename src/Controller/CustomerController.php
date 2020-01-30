@@ -45,10 +45,11 @@ class CustomerController extends AbstractController
             $from = $this->getParameter('mailer_from');
             $to = $customer->getMail();
             $viewCustomer = 'program/calendar.html.twig';
-                $mailer->sendContactEmail($from, $to, $customer, $viewCustomer);
+            $subjectCustomer = 'Thank you for suscribing our newsletter';
+                $mailer->sendContactEmail($from, $to, $customer, $subjectCustomer, $viewCustomer);
                 $this->addFlash('success', 'You will receive an email !');
             return $this->redirectToRoute('program_index');
-        }
+            }
 
         return $this->render('newsletter.html.twig', [
             'customer' => $customer,

@@ -23,16 +23,17 @@ class Newsletter
         $this->templating = $templating;
     }
 
-    public function sendContactEmail($from, $to, $customer, $view)
+    public function sendContactEmail($from, $to, $customer, $subject, $view)
     {
         $email = new Email();
         $email
             ->from($from)
             ->to($to)
-            ->subject('Une nouvelle série vient d\'être publiée')
+            ->subject($subject)
             ->html($this->templating->render($view, ['customer' => $customer]));
 
         $this->mailer->send($email);
-    }
+}
+
 
 }
