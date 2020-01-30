@@ -1,13 +1,8 @@
-$color: skyblue;
-$lineColor: hotpink;
-$fontColor: #bbb;
-$bgColor1: #222;
-$bgColor2: #444;
-$yearBgColor: #333;
-
 $breakpoint: 700px;
 
-
+h2 {
+  color: $whiteCircus;
+}
 .timeline {
   position: relative;
   padding: 1rem;
@@ -18,7 +13,7 @@ $breakpoint: 700px;
     content: '';
     position: absolute;
     height: 100%;
-    border: 1px solid $lineColor;
+    border: 1px solid $violetCircus;
     right: 40px;
     top: 0;
   }
@@ -41,8 +36,8 @@ $breakpoint: 700px;
 .timeline__item {
 
   padding: 1rem;
-  border: 2px solid $lineColor;
-  border-image: linear-gradient(to right, $color 0%, $lineColor 100%);
+  border: 2px solid $violetCircus;
+  border-image: linear-gradient(to right, $blueCircus 0%, $violetCircus 100%);
   border-image-slice: 1;
   position: relative;
   margin: 1rem 3rem 1rem 1rem;
@@ -58,7 +53,7 @@ $breakpoint: 700px;
     right: -10px;
     top: calc(50% - 5px);
     border-style: solid;
-    border-color: $lineColor $lineColor transparent transparent;
+    border-color: $violetCircus $violetCircus transparent transparent;
     border-width: 10px;
     transform: rotate(45deg);
   }
@@ -70,13 +65,13 @@ $breakpoint: 700px;
     &:nth-of-type(2n) {
       float: right;
       margin: 1rem;
-      border-image: linear-gradient(to right, $lineColor 0%, $color 100%);
+      border-image: linear-gradient(to right, $violetCircus 0%, $blueCircus 100%);
       border-image-slice: 1;
 
       &:before {
         right: auto;
         left: -10px;
-        border-color:transparent transparent $lineColor $lineColor;
+        border-color:transparent transparent $violetCircus $violetCircus;
       }
     }
   }
@@ -87,7 +82,7 @@ $breakpoint: 700px;
   max-width: 150px;
   margin: 0 48px 0 auto;
   font-size: 1.8rem;
-  background-color: $yearBgColor;
+  background-color: $darkCircus;
   line-height: 1;
   border-image: none;
   padding: .5rem 1rem 1rem;
