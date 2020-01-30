@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <title>{% block title %}Admin - Psycherdelic Circus - Bordeaux{% endblock %}</title>
+    {% include '_nav.html.twig' %}
+
+<div class="container">
+
+
+        <div class="main-box-inner">
+            <div class="main-box-content">
+                <h2>PROGRAMS</h2>
+                <h4>MANAGER</h4>
+                <div class="btn-group">
+                    <a href="{{ path('program_index_admin') }}"
+                       class="btn btn-cta white info">Edit</a>
+                    <a href="{{ path('program_new') }}"
+                       class="btn btn-cta white info">New</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="main-box-inner">
+            <div class="main-box-content">
+                <h2>CATEGORIES</h2>
+                <h4>MANAGER</h4>
+                <div class="btn-group">
+                    <a href="{{ path('category_index_admin') }}"
+                       class="btn btn-cta white info">Edit</a>
+                    <a href="{{ path('category_new') }}"
+                       class="btn btn-cta white info">New</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="main-box-inner">
+            <div class="main-box-content">
+                <h2>ARTISTS</h2>
+                <h4>MANAGER</h4>
+                <div class="btn-group">
+                    <a href="{{ path('artist_index_admin') }}"
+                       class="btn btn-cta white info">Edit</a>
+                    <a href="{{ path('artist_new') }}"
+                       class="btn btn-cta white info">New</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="main-box-inner">
+            <div class="main-box-content">
+                <h2>COMMENTS</h2>
+                <h4>MANAGER</h4>
+                <div class="btn-group">
+                    <a href="https://www.cirque-eloize.com/fr/spectacles-billets/" data-track="Spectacles"
+                       class="btn btn-cta white info">Go</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+</div>
+
+
+{% endblock %}

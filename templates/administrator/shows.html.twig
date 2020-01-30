@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shows index{% endblock %}
+
+{% block body %}
+    <h1>program index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>title</th>
+            <th>Summary</th>
+            <th>Poster</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for program in programs %}
+            <tr>
+                <td>{{ program.id }}</td>
+                <td>{{ program.title }}</td>
+                <td>{{ program.summary }}</td>
+                <td><img src="{{ program.poster }}"></td>
+                {%  if program.country is defined %}
+                <td>{{ program.country }}</td>
+                {% else %}
+                    <td>No country defined</td>
+                    {% endif %}
+                <td>{{ program.city }}</td>
+                <td>
+                    <a href="{{ path('program_show', {'id': program.id}) }}">show</a>
+                    <a href="{{ path('program_edit', {'id': program.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('program_new') }}">Create new</a>
+{% endblock %}
