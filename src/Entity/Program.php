@@ -63,6 +63,11 @@ class Program
      */
     private $country;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $programedAt;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -216,6 +221,18 @@ class Program
     public function setCountry(?string $country): self
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    public function getProgramedAt(): ?\DateTimeInterface
+    {
+        return $this->programedAt;
+    }
+
+    public function setProgramedAt(?\DateTimeInterface $programed_at): self
+    {
+        $this->programedAt = $programed_at;
 
         return $this;
     }

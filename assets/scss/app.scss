@@ -4,6 +4,8 @@
 @import "programs";
 @import "calendar";
 @import "history";
+@import "comment";
+@import "newsletter";
 body {
     margin:0;
     font-family: $quickSandFont;
@@ -12,7 +14,7 @@ body {
     line-height:1.5;
     color:$darkCircus;
     text-align:left;
-    background-color:$whiteCircus
+    background-color:$whiteCircus;
 }
 
 h4 {

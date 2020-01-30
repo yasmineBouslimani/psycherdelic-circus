@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
+    {% include '_nav.html.twig' %}
+    <div class=" header">
+        <div class="header-top">
+            <h1 class="header-title text-center">Write your comment here !</h1>
+            <a class="btn btn-secondary rounded-lg font-weight-bold justify-content-center" href="{{ path('comment_index') }}">See all comment <i class="fas fa-comments"></i></a>
+
+        </div>
+    </div>
+    {{ include('comment/_form.html.twig') }}
+
+
+{% endblock %}

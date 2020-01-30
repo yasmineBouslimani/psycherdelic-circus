@@ -1,35 +1,30 @@
-{% extends 'base.html.twig' %}
-{% block body %}
-    <title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
-    {% include '_nav.html.twig' %}
-
-    <div class=" header">
-        <div class="header-top">
-
-            <h1 class="header-title text-center">Calendar</h1>
-            <a class="btn btn-secondary rounded-lg font-weight-bold justify-content-center" href="#">Buy your tickets <i class="fas fa-ticket-alt ml-2" data-fa-transform="rotate-135"></i></a>
-        </div>
-    </div>
-
-
-    <div class="background-calendar position-relative">
-        <img class="voute-violette" src="http://flipfabrique.com/wp-content/themes/flip/lib/images/mask.svg" alt="">
-
-
-        <div class="mw-1040 ml-auto mr-auto pl-3 pr-3 mt-5"> </div>
-        {% for program in programs %}
-            <div class="card-date rounded-md row no-gutters">
-                <div class="col-12 col-md-3 ml-auto mr-auto ml-md-0 mr-md-0">
-                    <span class="text xxlg text-white font-weight-bold text-lowercase">February 1, 2020</span>
-                </div>
-                <div class="col pb-3 pb-md-0 pr-0 pr-md-4">
-                    <a class="text xxlg text-white font-weight-bold" href="http://flipfabrique.com/en/show/blizzard/" tabindex="0">{{program.title}}</a>
-                    <span class="text xxsm text-white lh-sm ls-xlg text-uppercase d-block mt-2">At The Cité Du Vin</span>
-                    <span class="text xxsm text-white lh-sm ls-xlg text-uppercase d-block">{{program.city}} ({{ program.country }})</span>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% apply inky_to_html %}
+    <container style="font-family: Arial,sans-serif;">
+        <container style="display: flex; justify-content: center; margin-bottom: 2vh;">
+            <row>
+                <columns>
+                    <img src="https://festipi.nl/wp-content/uploads/2017/11/psy_cir_logo.png" style="width: 40vw;">
+                </columns>
+            </row>
+        </container>
+        <container style="margin: 0 15vw;">
+            <p>Hi {{ customer.firstname }},</p>
+            <p>
+                We are pleased to inscribe you to our newsletter
+            </p>
+            <a href="http://127.0.0.1:8000/" style="margin-top: 5vh;">Click here to go to our psycherdelic website</a>
+            <p>See you.</p>
+        </container>
+    </container>
+{% endapply %}
+</body>
+</html>
 
 
 
@@ -37,10 +32,4 @@
 
 
 
-
-
-
-
-
-
-{% endblock %}
+</div>
