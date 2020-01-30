@@ -1,0 +1,64 @@
+.header-title {
+  font-weight: 700;
+}
+.header-top {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header {
+  padding: 120px 0 35px;
+  text-align: center;
+}
+.map {
+  height: 500px;
+}
+
+.grid {
+  background: #EEE;
+  max-width: 1200px;
+}
+
+.grid-item {
+  float: left;
+}
+
+/* item is invisible, but used for layout */
+.grid-item,
+.grid-item-content {
+  width: 120px;
+  height: 120px;
+}
+
+/* grid-item-content is visible, and transitions size */
+.grid-item-content {
+  width: 120px;
+  height: 120px;
+  background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+  -webkit-transition: width 0.4s, height 0.4s;
+  transition: width 0.4s, height 0.4s;
+}
+
+.grid-item:hover .grid-item-content {
+  border-color: white;
+  background: #A2C;
+  cursor: pointer;
+}
+
+/* both item and item content change size */
+.grid-item.is-expanded,
+.grid-item.is-expanded .grid-item-content {
+  width: 360px;
+  height: 240px;
+}
+
+.grid-item.is-expanded {
+  z-index: 2;
+}
+
+.grid-item.is-expanded .grid-item-content {
+  background: #F90;
+}

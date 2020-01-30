@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% apply inky_to_html %}
+    <container style="font-family: Arial,sans-serif;">
+        <container style="display: flex; justify-content: center; margin-bottom: 2vh;">
+            <row>
+                <columns>
+                    <img src="https://festipi.nl/wp-content/uploads/2017/11/psy_cir_logo.png" style="width: 40vw;">
+                </columns>
+            </row>
+        </container>
+        <container style="margin: 0 15vw;">
+            <p>Hi {{ customer.firstname }},</p>
+            <p>
+                We are pleased to inscribe you to our newsletter
+            </p>
+            <a href="http://127.0.0.1:8000/" style="margin-top: 5vh;">Click here to go to our psycherdelic website</a>
+            <p>See you.</p>
+        </container>
+    </container>
+{% endapply %}
+</body>
+</html>
+
+
+
+
+
+
+
+</div>

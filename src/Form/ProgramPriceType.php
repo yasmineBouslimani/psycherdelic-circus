@@ -2,29 +2,24 @@
 
 namespace App\Form;
 
-use App\Entity\Program;
+use App\Entity\ProgramPrice;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class Program1Type extends AbstractType
+class ProgramPriceType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('summary')
-            ->add('poster')
-            ->add('city')
-            ->add('artist')
-            ->add('categories')
+            ->add('price')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Program::class,
+            'data_class' => ProgramPrice::class,
         ]);
     }
 }

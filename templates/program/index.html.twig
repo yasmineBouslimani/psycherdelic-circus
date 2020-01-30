@@ -1,41 +1,38 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Program index{% endblock %}
-
 {% block body %}
-    <h1>Program index</h1>
+    <title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
+    {% include '_nav.html.twig' %}
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Summary</th>
-                <th>Poster</th>
-                <th>City</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class=" header" style="overflow: hidden; ">
+        <div class="header-top">
+            <h1 class="header-title text-center">Shows</h1>
+            <a class="btn btn-secondary rounded-lg font-weight-bold justify-content-center"
+               href="{{ path('ticket_index') }}">Buy your tickets <i class="fas fa-ticket-alt ml-2"data-fa-transform="rotate-135"></i></a>
+        </div>
+    </div>
+    <div class="background-calendar position-relative">
+        <img class="voute-violette" src="http://flipfabrique.com/wp-content/themes/flip/lib/images/mask.svg" alt="">
+        <h1 class="header-title text-center text-white">See the next show close to you ! </h1>
+        <div class="mw-1040 ml-auto mr-auto pl-3 pr-3 mt-5"></div>
+
         {% for program in programs %}
-            <tr>
-                <td>{{ program.id }}</td>
-                <td>{{ program.title }}</td>
-                <td>{{ program.summary }}</td>
-                <td>{{ program.poster }}</td>
-                <td>{{ program.city }}</td>
-                <td>
-                    <a href="{{ path('program_show', {'id': program.id}) }}">show</a>
-                    <a href="{{ path('program_edit', {'id': program.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
+            <div class="card-date rounded-md row no-gutters">
+                <div class="col-12 col-md-3 ml-auto mr-auto ml-md-0 mr-md-0">
+                    <span class="text xxlg text-white font-weight-bold text-lowercase">{{ program.programedAt|date('l j, o') }}</span>
+                </div>
+                <div class="col pb-3 pb-md-0 pr-0 pr-md-4">
+                    <a class="text xxlg text-white font-weight-bold" href="http://flipfabrique.com/en/show/blizzard/"
+                       tabindex="0">{{ program.title }}</a>
+                    <span class="text xxsm text-white lh-sm ls-xlg text-uppercase d-block mt-2">At The Cité Du Vin</span>
+                    <span class="text xxsm text-white lh-sm ls-xlg text-uppercase d-block">{{ program.city }} ({{ program.country }})</span>
+                </div>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('program_new') }}">Create new</a>
+    </div>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.7386713476285!2d-0.5938600491666527!3d44.84725508231484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5527e2cfe09657%3A0xd024aa3289ecced8!2s16%20Rue%20Ernest%20Renan%2C%2033000%20Bordeaux!5e0!3m2!1sfr!2sfr!4v1580317401235!5m2!1sfr!2sfr"
+                width="1520" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+
 {% endblock %}

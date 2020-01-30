@@ -22,7 +22,8 @@ class Administrator
     private $mail;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
     private $password;
 
@@ -40,6 +41,12 @@ class Administrator
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $created_at;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
 
     public function getId(): ?int
     {
@@ -105,4 +112,24 @@ class Administrator
 
         return $this;
     }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
 }

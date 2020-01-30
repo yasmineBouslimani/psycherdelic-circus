@@ -2,24 +2,31 @@
 
 namespace App\Form;
 
-use App\Entity\Category;
+use App\Entity\Comment;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class Category1Type extends AbstractType
+class CommentType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
+            ->add('comment')
+            ->add('rate')
+            ->add('customer', null,  [
+            'choice_label' => 'firstname'
+            ])
+            ->add('program', null,  [
+                'choice_label' => 'title'
+            ])
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Category::class,
+            'data_class' => Comment::class,
         ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Program;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,9 +17,16 @@ class ProgramType extends AbstractType
             ->add('summary')
             ->add('poster')
             ->add('city')
-            ->add('artist')
-            ->add('categories')
-        ;
+            ->add('programPrices', CollectionType::class, [
+                'entry_type' => ProgramPriceType::class,
+                'entry_options' => ['label' => false],
+            ])
+            ->add('artist', null, [
+                'choice_label' => 'firstname'
+            ])
+            ->add('categories', null, [
+                'choice_label' => 'name'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -1,23 +1,122 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <title>{% block title %}Wild Circus - Bordeaux{% endblock %}</title>
-    {% include '_nav.html.twig' %}
-    <div>
+<title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
+{% include '_nav.html.twig' %}
+<div style="background-color: #CACCE0">
     <img class="image-voiture" src="{{ asset('build/images/entete.png') }}" alt="newdeal's logo">
-        <div class="main-box">
-            <div class="main-box-inner">
-                <div class="main-box-content">
-                    <h4>EN TOURNÉE</h4>
-                    <h2>NOS SPECTACLES</h2>
-                    <div class="btn-group">
-                        <a href="https://www.cirque-eloize.com/fr/spectacles-billets/" data-track="Spectacles" class="btn btn-cta white info">En savoir plus</a>
-                    </div>
+    <div class="main-box">
+        <div class="main-box-inner mb-5">
+            <div class="main-box-content">
+                <h4>our shows</h4>
+                <h2>all around the world</h2>
+                <div class="btn-group">
+                    <a href="{{ path ('ticket_index') }}"
+                       class="btn btn-cta white info">buy your ticket</a>
                 </div>
             </div>
-            <div class="arrow">
-                <div class="scrolldown appear"><span class="icon-down"></span></div>
+        </div>
+    </div>
+    <div >
+
+        <div class="show-list-home container-fluid container-md">
+            <div class="card-deck-show row no-gutters justify-content-between">
+                <div class="card bg-dark text-white border-0 rounded-md text-center">
+                    <a href="#" class="box-link z-5"></a>
+                    <div class="card-bg"
+                         style="background-image: url('http://flipfabrique.com/wp-content/uploads/2019/07/petrouchka-vignette-500x0-c-default.jpg')"></div>
+                    <div class="card-img"></div>
+                    <div class="card-body">
+                        <a class="card-title text-white font-weight-bold"
+                           href="#">blablabla</a>
+                        <p class="card-text text mt-4 font-weight-bold">Psycherdelic Circus takes you on a crazy, poetic and
+                            gentle journey in the dead of winter, and invites you to lose yourself in a moment of
+                            complete wonder.</p>
+                    </div>
+
+
+                    <div class="card-footer border-0 z-6">
+                        <div class="row  justify-content-center  no-gutters">
+                            <div class="mt-2">
+                                <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
+                                   href="{{path ('comment_index')}}">See comments</a>
+                            </div>
+                            <div class="mt-2">
+                                <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
+                                   href="{{path ('ticket_index')}}">Buy your tickets
+                                  <i class="fas fa-ticket-alt icon-md ml-2" data-fa-transform="rotate-135"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card bg-dark text-white border-0 rounded-md text-center">
+                    <a href="http://flipfabrique.com/en/show/quebec-winter-carnival-parade-2020/"
+                       class="box-link z-5"></a>
+                    <div class="card-bg"
+                         style="background-image: url('http://flipfabrique.com/wp-content/uploads/2019/01/spectacle-vignette-blizzard-500x0-c-default.jpg')"></div>
+                    <div class="card-img"></div>
+                    <div class="card-body">
+                        <a class="card-title text-white font-weight-bold"
+                           href="http://flipfabrique.com/en/show/quebec-winter-carnival-parade-2020/">Blablabla 2020</a>
+                        <p class="card-text text mt-4 font-weight-bold">Psycherdelic Circus’s intrepid performers have
+                            captured all the excitement and wonder of a Quebec winter storm seen through the eyes of a
+                            child</p>
+                    </div>
+
+
+                    <div class="card-footer border-0 z-6">
+                        <div class="row  justify-content-center  no-gutters">
+                            <div class="mt-2">
+                                <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
+                                   href="{{ path('comment_index') }}">See comments</a>
+                            </div>
+                            <div class="mt-2">
+                                <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
+                                   href="{{path('ticket_index')}}">Buy
+                                    your tickets
+                                   <i class="fas fa-ticket-alt icon-md ml-2" data-fa-transform="rotate-135"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card bg-dark text-white border-0 rounded-md text-center">
+                    <a href="http://flipfabrique.com/en/show/transit/" class="box-link z-5"></a>
+                    <div class="card-bg"
+                         style="background-image: url('http://flipfabrique.com/wp-content/uploads/2018/09/transit-apercu-1-500x0-c-default.jpg')"></div>
+                    <div class="card-img"></div>
+                    <div class="card-body">
+                        <a class="card-title text-white font-weight-bold"
+                           href="http://flipfabrique.com/en/show/transit/">Bablabla 2020</a>
+                        <p class="card-text text mt-4 font-weight-bold">With Transit, and in a spirit of celebration and
+                            camaraderie, Psycherdelic Circus invites you to live the ups and downs of a life on tour. It takes
+                            nerve to conjure up the remarkable and dizzy heights of a moment in time where everything is
+                            possible!</p>
+                    </div>
+
+
+                    <div class="card-footer border-0 z-6">
+                        <div class="row  justify-content-center  no-gutters">
+                            <div class="mt-2">
+                                <a class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
+                                   href="{{ path('comment_index') }}">See comments</a>
+                            </div>
+                            <div class="mt-2">
+                                <a href="{{ path('ticket_index') }}"
+                                   class="btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block">
+                                    Buy your tickets
+                                  <i class="fas fa-ticket-alt icon-md ml-2" data-fa-transform="rotate-135"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-
     </div>
-{% endblock %}
+</div>
+
+    {% endblock %}
