@@ -106,3 +106,6 @@ function setItemContentTransitionSize( itemContent, itemElem ) {
     itemContent.style.width = size.width + 'px';
     itemContent.style.height = size.height + 'px';
 }
+
+
+

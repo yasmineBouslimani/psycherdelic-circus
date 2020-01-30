@@ -4,6 +4,7 @@
 @import "programs";
 @import "calendar";
 @import "history";
+@import "~masonry-layout/masonry";
 body {
     margin:0;
     font-family: $quickSandFont;
@@ -13,4 +14,11 @@ body {
     color:$darkCircus;
     text-align:left;
     background-color:$whiteCircus
+}
+
+h4 {
+    font-weight: 600;
+}
+h2 {
+    font-weight: 600;
 }

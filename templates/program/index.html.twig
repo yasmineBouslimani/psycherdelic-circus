@@ -7,7 +7,7 @@
     <div class="header-top">
 
     <h1 class="header-title text-center">Shows</h1>
-        <a class="btn btn-secondary rounded-lg font-weight-bold justify-content-center" href="#">Buy your tickets <i class="fas fa-ticket-alt ml-2" data-fa-transform="rotate-135"></i></a>
+        <a class="btn btn-secondary rounded-lg font-weight-bold justify-content-center" href="{{ path('ticket_index') }}">Buy your tickets <i class="fas fa-ticket-alt ml-2" data-fa-transform="rotate-135"></i></a>
     </div>
 </div>
 
@@ -24,7 +24,6 @@
             <div class="grid-item-content">
                 <h4> {{ program.title }}</h4>
             <img src="{{ program.poster }}" style="width: 100%; height:100%" alt=" image scene">
-
             </div>
         </div>
 

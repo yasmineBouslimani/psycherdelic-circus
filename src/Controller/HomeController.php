@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use App\Repository\ProgramPriceRepository;
 use App\Repository\ProgramRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -41,6 +42,17 @@ class HomeController extends AbstractController
         return $this->render('history.html.twig');
     }
 
+    /**
+     * @return Response
+     * @Route("/ticket", name="ticket_index", methods={"GET","POST"})
+     *
+     */
+    public function showBuyTicket(ProgramRepository $programRepository, ProgramPriceRepository $programPriceRepository): Response
+    {
+        return $this->render('ticket.html.twig', [
+            'programs' => $programRepository->findAll(),
+        ]);
+    }
 
 
 }

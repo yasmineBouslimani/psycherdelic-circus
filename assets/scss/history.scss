@@ -26,14 +26,6 @@ $breakpoint: 700px;
     display: table;
     clear: both;
   }
-
-  @media screen and (min-width: $breakpoint) {
-    padding: 2rem;
-    &:before {
-      left: calc(50% - 1px);
-      right: auto;
-    }
-  }
 }
 
 .timeline__item {
@@ -60,24 +52,6 @@ $breakpoint: 700px;
     border-width: 10px;
     transform: rotate(45deg);
   }
-
-  @media screen and (min-width: $breakpoint) {
-    width: 44%;
-    margin: 1rem;
-
-    &:nth-of-type(2n) {
-      float: right;
-      margin: 1rem;
-      border-image: linear-gradient(to right, $lineColor 0%, $color 100%);
-      border-image-slice: 1;
-
-      &:before {
-        right: auto;
-        left: -10px;
-        border-color:transparent transparent $lineColor $lineColor;
-      }
-    }
-  }
 }
 
 .timeline__item--year {
@@ -93,21 +67,6 @@ $breakpoint: 700px;
 
   &:before {
     display: none;
-  }
-
-  @media screen and (min-width: $breakpoint) {
-    text-align: center;
-    margin: 0 auto;
-
-    &:nth-of-type(2n) {
-      float: none;
-      margin: 0 auto;
-      border-image: none;
-
-      &:before {
-        display: none;
-      }
-    }
   }
 }
 
