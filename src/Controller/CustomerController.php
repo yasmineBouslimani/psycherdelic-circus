@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Customer;
+use App\Service\Newsletter;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use App\Form\CustomerType;
 use App\Repository\CustomerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -28,7 +31,7 @@ class CustomerController extends AbstractController
     /**
      * @Route("/new", name="customer_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, Newsletter $mailer): Response
     {
         $customer = new Customer();
         $form = $this->createForm(CustomerType::class, $customer);
@@ -39,7 +42,12 @@ class CustomerController extends AbstractController
             $entityManager->persist($customer);
             $entityManager->flush();
 
-            return $this->redirectToRoute('customer_index');
+            $from = $this->getParameter('mailer_from');
+            $to = $customer->getMail();
+            $viewCustomer = 'program/calendar.html.twig';
+                $mailer->sendContactEmail($from, $to, $customer, $viewCustomer);
+                $this->addFlash('success', 'You will receive an email !');
+            return $this->redirectToRoute('program_index');
         }
 
         return $this->render('newsletter.html.twig', [
