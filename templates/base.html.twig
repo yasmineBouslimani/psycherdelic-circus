@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-        <title>{% block title %}{% endblock %}</title>
-        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-    {% for label, messages in app.flashes %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+{% for label, messages in app.flashes %}
     {% for message in messages %}
         <div class="alert alert-{{ label }} m-0">
             {{ message }}
         </div>
     {% endfor %}
-    {% endfor %}
-        {% block body %}
-
+{% endfor %}
+{% block body %}
 {% endblock %}
-        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-            <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-        {% endblock %}
-        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 
-
-    </body>
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
 </html>

@@ -1,26 +1,24 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
-{% include '_nav.html.twig' %}
+    <title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
+    {% include '_nav.html.twig' %}
     {% form_theme form 'bootstrap_4_layout.html.twig' %}
-<div class=" header">
-    <div class="header-top">
-
-        <h1 class="header-title text-center">Newsletter</h1>
-        <a class="btn btn-secondary rounded-lg font-weight-bold justify-content-center" href="#">Buy your tickets <i class="fas fa-ticket-alt ml-2" data-fa-transform="rotate-135"></i></a>
+    <div class=" header">
+        <div class="header-top">
+            <h1 class="header-title text-center">Newsletter</h1>
+            <a class="btn btn-secondary rounded-lg font-weight-bold justify-content-center" href="#">Buy your tickets <i
+                        class="fas fa-ticket-alt ml-2" data-fa-transform="rotate-135"></i></a>
+        </div>
     </div>
-</div>
-
-<div class="background-newletter position-relative">
-    <img class="voute-violette" src="http://flipfabrique.com/wp-content/themes/flip/lib/images/mask.svg" alt="">
-
-    <div class="container w-25" style="font-weight: 600;">
-        {{ form_start(form) }}
-        {{ form_row(form.firstname) }}
-        {{ form_row(form.lastname) }}
-        {{ form_row(form.mail) }}
-        <button class="btn btn-light">{{ button_label|default('Save') }}</button>
-        {{ form_end(form) }}
-</div>
-</div>
+    <div class="background-newletter position-relative">
+        <img class="voute-violette" src="http://flipfabrique.com/wp-content/themes/flip/lib/images/mask.svg" alt="">
+        <div class="container w-25" style="font-weight: 600;">
+            {{ form_start(form) }}
+            {{ form_row(form.firstname) }}
+            {{ form_row(form.lastname) }}
+            {{ form_row(form.mail) }}
+            <button class="btn btn-light">{{ button_label|default('Save') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}

@@ -3,13 +3,22 @@
 <div class="background-calendar position-relative">
     <img class="voute-violette" src="http://flipfabrique.com/wp-content/themes/flip/lib/images/mask.svg" alt="">
 
-    <div class="container w-25" style="font-weight: 600;">
+    <div class="container container-comentaire" style="font-weight: 600;">
         {{ form_start(form) }}
-        {{ form_row(form.program) }}
-        {{ form_row(form.comment, {'attr' : {'class' : 'comment-text'}}) }}
-        {{ form_row(form.rate) }}
-        {{ form_row(form.customer) }}
-        <button class="btn btn-light w-25 justify-content-center">{{ button_label|default('Save') }}</button>
+        <p> Which show do you want to talk us about ?*</p>
+        {{ form_widget(form.program, {'placeholder' : 'Choose a show'}) }}
+<br>
+
+        <p>What do you want to say about the show ?*</p>
+        {{ form_widget(form.comment, {'attr' : {'class' : 'comment-text','placeholder' : 'Write your comment here'}}) }}
+<br>
+        <p>Give a rate for the show...*</p>
+        {{ form_widget(form.rate) }}
+        <br>
+        <p>You can choose the artist you want to congrat !</p>
+        {{ form_widget(form.customer, {'placeholder' : 'Artists'}) }}
+        <br>
+        <button class="btn btn-light w-30 justify-content-center">{{ button_label|default('And save !') }}</button>
         {{ form_end(form) }}
     </div>
 </div>

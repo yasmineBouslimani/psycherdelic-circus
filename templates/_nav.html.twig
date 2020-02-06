@@ -1,30 +1,36 @@
 <header class="navbar navbar-main bg-dark position-relative">
-
     <div class="nav-top-wrapper site-wrapper bg-dark">
         <div class="container-fluid">
             <div class="nav-top row justify-content-between align-items-center no-gutters">
                 <ul class="nav-social position-relative z-2">
-                    <li><a class="text-gray" href="#" target="_blank"><i
-                                    class="fab fa-facebook-f"></i></a></li>
-                    <li><a class="text-gray" href="#" target="_blank"><i
-                                    class="fab fa-instagram"></i></a></li>
-                    <li><a class="text-gray" href="#" target="_blank"><i
-                                    class="fab fa-twitter"></i></a></li>
-                    <li><a class="text-gray" href="#"
-                           target="_blank"><i class="fab fa-youtube"></i></a></li>
+                    <li>
+                        <a class="text-gray" href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a class="text-gray" href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a class="text-gray" href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a class="text-gray" href="#"><i class="fab fa-youtube"></i></a>
+                    </li>
                 </ul>
                 <div class="row no-gutters justify-content-end position-relative z-2">
                     <div class="nav-item" style=" margin-left: 800px;">
-                        <a class="link text-gray font-weight-bold border-h text-lowercase" style="padding-right: 8px" href="{{ path('contact') }}">
+                        <a class="link text-gray font-weight-bold border-h text-lowercase" style="padding-right: 8px"
+                           href="{{ path('contact') }}">
                             Contact
                         </a>
                         {% if app.user %}
-                            <span style="color:#C9AFD1; font-weight: 700"> {{ app.user.email }}</span>
-                            <a class="link text-gray font-weight-bold border-h text-lowercase" href="{{ path('app_logout') }}">
+                            <span style="color:#C9AFD1; font-weight: 700"><a href="{{ path('administrator') }}" class="link text-white xxlg font-weight-bold border-h text-lowercase">{{ app.user.email }}</a></span>
+                            <a class="link text-gray font-weight-bold border-h text-lowercase"
+                               href="{{ path('app_logout') }}">
                                 Se déconnecter
                             </a>
                         {% else %}
-                            <a class="link text-gray font-weight-bold border-h text-lowercase"  href="{{ path('app_login') }}">
+                            <a class="link text-gray font-weight-bold border-h text-lowercase"
+                               href="{{ path('app_login') }}">
                                 Administrateur
                             </a>
                         {% endif %}
@@ -33,9 +39,7 @@
             </div>
         </div>
     </div>
-
     <div id="sticky-anchor" class="w-100"></div>
-
     <div class="sticky-wrapper w-100">
         <div class="sticky bg-dark w-100">
             <div class="site-wrapper">
@@ -48,7 +52,7 @@
                                             href="{{ path('program_index') }}">Shows</a></div>
                                 <div class="nav-item"><a
                                             class="link text-white xxlg font-weight-bold border-h text-lowercase"
-                                            href="{{path('ticket_index') }}">tickets</a></div>
+                                            href="{{ path('ticket_index') }}">tickets</a></div>
                                 <div class="nav-item dropdown">
                                     <a class="link text-white xxlg font-weight-bold border-h text-lowercase" href="#"
                                        role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -59,7 +63,7 @@
 
                                     <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuLink">
                                         <a class="dropdown-item text xsm font-weight-bold ls-lg text-lowercase"
-                                           href="{{path('history_index')}}">About</a>
+                                           href="{{ path('history_index') }}">About</a>
                                         <a class="dropdown-item text xsm font-weight-bold ls-lg text-lowercase"
                                            href="#">WILD Team</a>
                                     </div>
@@ -75,7 +79,7 @@
                             <nav class="nav-sub row justify-content-between align-items-center no-gutters">
                                 <div class="nav-item"><a
                                             class="link text-white font-weight-bold border-h text-lowercase"
-                                            href="#">News</a></div>
+                                            href="{{ path ('roulette') }}">Games</a></div>
                                 <div class="nav-item dropdown">
                                     <a class="link text-white font-weight-bold border-h text-lowercase" href="#"
                                        role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -95,9 +99,11 @@
                                 </div>
                                 <div class="nav-item">
                                     <a class="link text-white font-weight-bold border-h text-lowercase"
-                                            href="{{path('comment_index')}}">Comments</a></div>
-                                <div class="nav-item"><a class="btn btn-sm btn-primary rounded-lg font-weight-bold"
-                                                         href="{{path('customer_new')}}">Newsletter</a>
+                                       href="{{ path('comment_index') }}">Comments</a>
+                                </div>
+                                <div class="nav-item">
+                                    <a class="btn btn-sm btn-primary rounded-lg font-weight-bold"
+                                       href="{{ path('customer_new') }}">Newsletter</a>
                                 </div>
                             </nav>
                         </div>

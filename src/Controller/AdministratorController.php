@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\ArtistRepository;
 use App\Repository\CategoryRepository;
+use App\Repository\CommentRepository;
 use App\Repository\ProgramRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -54,6 +55,17 @@ class AdministratorController extends AbstractController
     {
         return $this->render('administrator/categories.html.twig', [
             'categories' => $categoryRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @return Response
+     * @Route("/admin/show/comment", name="comment_index_admin", methods={"GET"})
+     */
+    public function showCommentAdmin(CommentRepository $commentRepository): Response
+    {
+        return $this->render('administrator/comments.html.twig', [
+            'comments' => $commentRepository->findAll(),
         ]);
     }
 

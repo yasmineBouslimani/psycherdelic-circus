@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
+{% include '_nav.html.twig' %}
+
+<div class=" header">
+    <div class="header-top">
+        <h1 class="header-title text-center">Newsletter</h1>
+        <a class="btn btn-secondary rounded-lg font-weight-bold justify-content-center" href="#">Buy your tickets <i
+                    class="fas fa-ticket-alt ml-2" data-fa-transform="rotate-135"></i></a>
+    </div>
+</div>
+
+
+<p> Starting Money Pot: {{ startingpot }}><br/>
+Base Bet: <?php echo $base_bet; ?><br/>
+Maximum Bet: <?php echo $maximumbet; ?><br/>
+Color choosen: <?php echo $color; ?><br/>
+Number of Spins: <?php echo $numspins ?><br/><br/>
+<strong style="font-size:14px">Money after the bets: $<?php echo $moneypot; ?></strong><br/><br/>
+Summary of spins: <br/>
+<?php echo $result_text; ?>
+
+<?php
+}else{
+//If the form data has not been submitted just show the form in HTML
+?>
+
+<form name="rform" method="post">
+    Starting Money Pot: <input type="text" value="600" name="moneypot"> *<br/><br/>
+    Base Bet: <input type="text" value="10" name="base_bet"> *<br/><br/>
+    Maximum Bet: <input type="text" value="0" name="maximumbet"> (leave at 0 to keep doubling down)<br/><br/>
+    Color choosen: <select name="color">
+        <option value="red">Red</option>
+        <option value="black">Black</option>
+        <option value="random">Random</option>
+    </select>
+    <br/><br/>
+    Number of Spins to do: <input type="text" value="100" name="numspins"> *<br/><br/>
+    <input type="hidden" value="spin" name="task">
+    <input type="submit" value="Spin the wheel!">
+</form>
+
+<?php
+}
+?>

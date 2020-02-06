@@ -2,7 +2,6 @@
 {% block body %}
     <title>{% block title %}Psycherdelic Circus - Bordeaux{% endblock %}</title>
     {% include '_nav.html.twig' %}
-
     <div class=" header">
         <div class="header-top">
 
@@ -10,42 +9,32 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <div class="background-calendar position-relative">
-
-
         <img class="voute-violette" src="http://flipfabrique.com/wp-content/themes/flip/lib/images/mask.svg" alt="">
         <div class="text-center">
-
             <div id="total"
                  class="text xxlg text-white font-weight-bold"></div>
         </div>
-
         <div class="mw-1040 ml-auto mr-auto pl-3 pr-3 mt-5"></div>
         {% for program in programs %}
             <div class="card-date rounded-md row no-gutters">
                 <div class="col-12 col-md-3 ml-auto mr-auto ml-md-0 mr-md-0">
-                    <span class="text xxlg text-white font-weight-bold text-lowercase">February 1, 2020</span>
+                    <span class="text xxlg text-white font-weight-bold text-lowercase">{{ program.programedAt|date('l j, o') }}</span>
                 </div>
                 <div class="col pb-3 pb-md-0 pr-0 pr-md-4">
-                    <a class="text xxlg text-white font-weight-bold" href="http://flipfabrique.com/en/show/blizzard/"
+                    <a class="text xxlg text-white font-weight-bold" href="#"
                        tabindex="0">{{ program.title }}</a>
                     <span class="text xxsm text-white lh-sm ls-xlg text-uppercase d-block mt-2">At The Cité Du Vin</span>
                     <span class="text xxsm text-white lh-sm ls-xlg text-uppercase d-block">{{ program.city }} ({{ program.country }})</span>
                 </div>
-
                 <div>
-                        <a class="program btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
-                       style="transform-origin: 0.5625em 0.5em;" data-program="{{ program.id }}">Buy ticket  <i class="fas fa-ticket-alt ml-2" data-fa-transform="rotate-135"></i></a>
-
+                    <a class="program btn btn-outline-light rounded-lg font-weight-bold minw-230 text-center d-block d-sm-inline-block"
+                       style="transform-origin: 0.5625em 0.5em;" data-program="{{ program.id }}">Buy ticket <i
+                                class="fas fa-ticket-alt ml-2" data-fa-transform="rotate-135"></i></a>
                 </div>
-
             </div>
-
         {% endfor %}
     </div>
-
-
     <script>
         $tous = {};
         $(".program").on("click", function (event) {
@@ -60,7 +49,7 @@
             $total = 0;
             $.each($tous, function (key, item) {
                 if (item !== undefined) {
-                    $("#total").append("<span>Total for 1 ticket: " + $prix + " euros</span>");
+                    $("#total").append("<span>Price for 1 ticket: " + $prix + " euros</span>");
                     $("#total").append("<a href='#' class=\"enlever\" data-expo='" + key + "'> supp</a><br>");
                     $total += $prix;
                 }
@@ -79,6 +68,5 @@
             resumer();
         });
     </script>
-
 
 {% endblock %}
